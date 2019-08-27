@@ -70,20 +70,20 @@ namespace Skoruba.IdentityServer4.Admin
             //        RoleClaimsDto<string>, UserClaimDto<string>, RoleClaimDto<string>>();
 
             ///// Single tenant configuration (default)
-            //services.AddSingleTenantConfiguration(HostingEnvironment,
-            //    StartupHelpers.DefaultIdentityDbContextOptions(Configuration),
-            //    StartupHelpers.DefaultIdentityServerConfigurationOptions(Configuration),
-            //    StartupHelpers.DefaultIdentityServerOperationalStoreOptions(Configuration),
-            //    StartupHelpers.DefaultLogDbContextOptions(Configuration),
-            //    StartupHelpers.DefaultIdentityOptions(Configuration));
-
-            /// Multi Tenant configuration
-            services.AddMultiTenantConfiguration(HostingEnvironment,
+            services.AddSingleTenantConfiguration(HostingEnvironment,
                 StartupHelpers.DefaultIdentityDbContextOptions(Configuration),
                 StartupHelpers.DefaultIdentityServerConfigurationOptions(Configuration),
                 StartupHelpers.DefaultIdentityServerOperationalStoreOptions(Configuration),
                 StartupHelpers.DefaultLogDbContextOptions(Configuration),
                 StartupHelpers.DefaultIdentityOptions(Configuration));
+
+            /// Multi Tenant configuration
+            //services.AddMultiTenantConfiguration(HostingEnvironment,
+            //    StartupHelpers.DefaultIdentityDbContextOptions(Configuration),
+            //    StartupHelpers.DefaultIdentityServerConfigurationOptions(Configuration),
+            //    StartupHelpers.DefaultIdentityServerOperationalStoreOptions(Configuration),
+            //    StartupHelpers.DefaultLogDbContextOptions(Configuration),
+            //    StartupHelpers.DefaultIdentityOptions(Configuration));
 
             // Add Asp.Net Core Identity Configuration and OpenIdConnect auth as well
             services.AddAuthenticationServices(HostingEnvironment, rootConfiguration.AdminConfiguration);

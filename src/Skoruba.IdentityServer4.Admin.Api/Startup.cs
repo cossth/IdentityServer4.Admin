@@ -48,20 +48,20 @@ namespace Skoruba.IdentityServer4.Admin.Api
             services.AddSingleton(adminApiConfiguration);
 
             ///// Single Tenant configuration
-            //services.AddSingleTenantConfiguration(HostingEnvironment,
-            //    StartupHelpers.DefaultIdentityDbContextOptions(Configuration),
-            //    StartupHelpers.DefaultIdentityServerConfigurationOptions(Configuration),
-            //    StartupHelpers.DefaultIdentityServerOperationalStoreOptions(Configuration),
-            //    StartupHelpers.DefaultLogDbContextOptions(Configuration),
-            //    StartupHelpers.DefaultIdentityOptions(Configuration));
-
-            /// Multi Tenant configuration
-            services.AddMultiTenantConfiguration(HostingEnvironment,
+            services.AddSingleTenantConfiguration(HostingEnvironment,
                 StartupHelpers.DefaultIdentityDbContextOptions(Configuration),
                 StartupHelpers.DefaultIdentityServerConfigurationOptions(Configuration),
                 StartupHelpers.DefaultIdentityServerOperationalStoreOptions(Configuration),
                 StartupHelpers.DefaultLogDbContextOptions(Configuration),
                 StartupHelpers.DefaultIdentityOptions(Configuration));
+
+            /// Multi Tenant configuration
+            //services.AddMultiTenantConfiguration(HostingEnvironment,
+            //    StartupHelpers.DefaultIdentityDbContextOptions(Configuration),
+            //    StartupHelpers.DefaultIdentityServerConfigurationOptions(Configuration),
+            //    StartupHelpers.DefaultIdentityServerOperationalStoreOptions(Configuration),
+            //    StartupHelpers.DefaultLogDbContextOptions(Configuration),
+            //    StartupHelpers.DefaultIdentityOptions(Configuration));
 
             //services.AddDbContexts<AdminIdentityDbContext, IdentityServerConfigurationDbContext, IdentityServerPersistedGrantDbContext, AdminLogDbContext>(Configuration);
             services.AddScoped<ControllerExceptionFilterAttribute>();
