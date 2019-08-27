@@ -12,7 +12,11 @@ namespace Skoruba.IdentityServer4.Admin.EntityFramework.Shared.DbContexts
             : base(options, storeOptions)
         {
         }
-
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.HasDefaultSchema("identity");
+        }
         public DbSet<ApiResourceProperty> ApiResourceProperties { get; set; }
 
         public DbSet<IdentityResourceProperty> IdentityResourceProperties { get; set; }

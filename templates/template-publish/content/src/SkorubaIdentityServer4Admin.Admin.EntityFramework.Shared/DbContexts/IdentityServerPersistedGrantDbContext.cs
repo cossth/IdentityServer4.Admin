@@ -11,5 +11,11 @@ namespace SkorubaIdentityServer4Admin.Admin.EntityFramework.Shared.DbContexts
             : base(options, storeOptions)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.HasDefaultSchema("idpersist");
+        }
     }
 }
