@@ -3,7 +3,7 @@
 # - Use folders src and tests for project template
 # - Create db migrations for seed data
 
-$gitProject = "https://github.com/skoruba/IdentityServer4.Admin"
+$gitProject = "https://github.com/cossth/IdentityServer4.Admin"
 $gitBranchName = "dev"
 $gitProjectFolder = "Skoruba.IdentityServer4.Admin"
 $templateSrc = "template-build/content/src"
